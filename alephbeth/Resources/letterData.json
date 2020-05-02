@@ -1,0 +1,217 @@
+[
+    {
+        "id": 0,
+        "name": "alef",
+        "script": "א",
+        "sofit": false,
+        "dagesh": false
+    },
+    {
+        "id": 1,
+        "name": "vet",
+        "script": "ב",
+        "sofit": false,
+        "dagesh": false
+    },
+    {
+        "id": 2,
+        "name": "bet",
+        "script": "בּ",
+        "sofit": false,
+        "dagesh": true
+    },
+    {
+        "id": 3,
+        "name": "gimel",
+        "script": "ג",
+        "sofit": false,
+        "dagesh": false
+    },
+    {
+        "id": 4,
+        "name": "dalet",
+        "script": "ד",
+        "sofit": false,
+        "dagesh": false
+    },
+    {
+        "id": 5,
+        "name": "hey",
+        "script": "ה",
+        "sofit": false,
+        "dagesh": false
+    },
+    {
+        "id": 6,
+        "name": "vav",
+        "script": "ו",
+        "sofit": false,
+        "dagesh": false
+    },
+    {
+        "id": 7,
+        "name": "zain",
+        "script": "ז",
+        "sofit": false,
+        "dagesh": false
+    },
+    {
+        "id": 8,
+        "name": "xet",
+        "script": "ח",
+        "sofit": false,
+        "dagesh": false
+    },
+    {
+        "id": 9,
+        "name": "tet",
+        "script": "ט",
+        "sofit": false,
+        "dagesh": false
+    },
+    {
+        "id": 10,
+        "name": "yud",
+        "script": "י",
+        "sofit": false,
+        "dagesh": false
+    },
+    {
+        "id": 11,
+        "name": "khaf",
+        "script": "כ",
+        "sofit": false,
+        "dagesh": false
+    },
+    {
+        "id": 12,
+        "name": "kaf",
+        "script": "כּ",
+        "sofit": false,
+        "dagesh": true
+    },
+    {
+        "id": 13,
+        "name": "khaf sofit",
+        "script": "ך",
+        "sofit": true,
+        "dagesh": false
+    },
+    {
+        "id": 14,
+        "name": "lamed",
+        "script": "ל",
+        "sofit": false,
+        "dagesh": false
+    },
+    {
+        "id": 15,
+        "name": "mem",
+        "script": "מ",
+        "sofit": false,
+        "dagesh": false
+    },{
+        "id": 16,
+        "name": "mem sofit",
+        "script": "ם",
+        "sofit": true,
+        "dagesh": false
+    },{
+        "id": 17,
+        "name": "nun",
+        "script": "נ",
+        "sofit": false,
+        "dagesh": false
+    },
+    {
+        "id": 18,
+        "name": "nun sofit",
+        "script": "ן",
+        "sofit": true,
+        "dagesh": false
+    },
+    {
+        "id": 19,
+        "name": "samekh",
+        "script": "ס",
+        "sofit": false,
+        "dagesh": false
+    },
+    {
+        "id": 20,
+        "name": "ayin",
+        "script": "ע",
+        "sofit": false,
+        "dagesh": false
+    },
+    {
+        "id": 21,
+        "name": "fey",
+        "script": "פ",
+        "sofit": false,
+        "dagesh": false
+    },
+    {
+        "id": 22,
+        "name": "pey",
+        "script": "פּ",
+        "sofit": false,
+        "dagesh": true
+    },
+    {
+        "id": 23,
+        "name": "fey sofit",
+        "script": "ף",
+        "sofit": true,
+        "dagesh": false
+    },
+    {
+        "id": 24,
+        "name": "tsadi",
+        "script": "צ",
+        "sofit": false,
+        "dagesh": false
+    },
+    {
+        "id": 25,
+        "name": "tsadi sofit",
+        "script": "ץ",
+        "sofit": true,
+        "dagesh": false
+    },
+    {
+        "id": 26,
+        "name": "quf",
+        "script": "ק",
+        "sofit": false,
+        "dagesh": false
+    },
+    {
+        "id": 27,
+        "name": "resh",
+        "script": "ר",
+        "sofit": false,
+        "dagesh": false
+    },
+    {
+        "id": 28,
+        "name": "shin",
+        "script": "שׁ",
+        "sofit": false,
+        "dagesh": false
+    },
+    {
+        "id": 29,
+        "name": "sin",
+        "script": "שׂ",
+        "sofit": false,
+        "dagesh": false
+    },
+    {
+        "id": 30,
+        "name": "taf",
+        "script": "ת",
+        "sofit": false,
+        "dagesh": false
+    },
+]
