@@ -10,10 +10,13 @@ import Foundation
 import SwiftUI
 
 
-struct Letter: Hashable, Codable {
-    var id: Int
-    var name: String
-    var script: String
-    var sofit: Bool
-    var dagesh: Bool
+struct Letter: Hashable, Codable, Identifiable {
+    let id: Int
+    let name: String
+    let script: String
+    let sofit: Bool
+    let dagesh: Bool
+    let original: Int
+    let description: String
 }
+

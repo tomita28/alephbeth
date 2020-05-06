@@ -14,12 +14,5 @@ final class UserData: ObservableObject  {
     let letters = letterData
     @Published var incorrectlyAnsweredLetters: [Letter] = []
     @Published var unQuestionedNums: [Int] = []
-    func completedRate () -> Double {
-        let unAnswered = unQuestionedNums.count
-        let completed = letters.count - incorrectlyAnsweredLetters.count - unAnswered
-        let rate = Double(completed) / Double(letters.count)
-        let percent = rate * 100.0
-        return percent
-    }
-    @Published var percent: Double = 0.0
+    @Published var nextAnswerNum: [Int] = []
 }
