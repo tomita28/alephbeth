@@ -10,8 +10,7 @@ import SwiftUI
 
 struct ResultView: View {
     @ObservedObject var userData: UserData
-    let letters: [Letter] = letterData
-    let names = ["John", "Apple", "Seed"]
+    let letters: [Letters.Letter]
     let percent: Double
 
 
@@ -30,7 +29,9 @@ struct ResultView: View {
             
 
             Spacer()
-            LetterList(letters: userData.incorrectlyAnsweredLetters)
+            LetterList(
+                letters: userData.incorrectlyAnsweredLetters,
+                title: "間違えた文字を復習しよう")
         }
         .navigationBarTitle("間違えた文字たち", displayMode: .inline)
     }
@@ -41,13 +42,13 @@ struct ResultView_Previews: PreviewProvider {
     static var previews: some View {
         let userData = UserData()
         userData.incorrectlyAnsweredLetters =
-            letterData
+            lettersData[0].letters
             //[
             //letterData[0],
             //letterData[1],
             //letterData[2]
         //]
-        userData.unQuestionedNums = []
-        return ResultView(userData: userData, percent: 0)
+        userData.unQuestionedLetters = []
+        return ResultView(userData: userData, letters: lettersData[0].letters, percent: 0)
     }
 }

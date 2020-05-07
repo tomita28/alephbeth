@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct LetterRow: View {
-    var letter: Letter
+    var letter: Letters.Letter
     
     var body: some View {
         HStack{
@@ -26,8 +26,8 @@ struct LetterRow: View {
 struct LetterRow_Previews: PreviewProvider {
     static var previews: some View {
         Group{
-            LetterRow(letter: letterData[0])
-            LetterRow(letter: letterData[1])
+            LetterRow(letter: lettersData[0].letters[0])
+            LetterRow(letter: lettersData[0].letters[1])
         }
         .previewLayout(.fixed(width: 300, height: 70))
     }

@@ -17,7 +17,8 @@ import UIKit
 import SwiftUI
 import CoreLocation
 
-let letterData: [Letter] = load("letterData.json")
+//let letterData: [Letters.Letter] = load("letterData.json")
+let lettersData: [Letters] = load("letterData.json")
 
 func load<T: Decodable>(_ filename: String) -> T {
     let data: Data

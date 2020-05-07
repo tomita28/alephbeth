@@ -10,35 +10,39 @@ import SwiftUI
 
 struct ContentView: View {
     
-    let letters: [Letter] = letterData
-
+    let letters: [Letters.Letter]
+    let pickers: [Pickable]
+    let title: String
+    
     @ObservedObject var userData = UserData()
     
     @State var selection = 0
     @State var submitted = false
     @State var isCorrect = false
-    @State var answerNum: Int? = nil
+    @State var answerLetter: Letters.Letter? = nil
     
     var body: some View {
         VStack {
             Text(answerLetterScript())
-                .font(.largeTitle)
-            Text("この文字の名前は？")
+                .font(.largeTitle).padding()
+            Text("これの読み方は？")
                 .font(.subheadline)
             Picker(selection: $selection, label: Text("")) {
-                ForEach(0..<letters.count){ num in
-                    Text(self.letters[num].name)
+                ForEach(0..<pickers.count){ num in
+                    Text(self.pickers[num].name)
                 }
             }
             .labelsHidden()
 
             HStack{
+                
                 //まだこの問題に対して回答していない時
                 if(!self.submitted){
                     //回答ボタン有効
                     Button(action: {
                         //正誤をチェック
-                        self.isCorrect = (self.letters[self.selection].id == self.answerNum)
+                        let answerId: Int? = self.answerLetter.map{$0.answerId ?? $0.id}
+                        self.isCorrect = answerId.map{$0 == self.pickers[self.selection].id} ?? false
                         //未出題の問題を一つ削って次の解答へ入れる
                         self.setNextAnswer ()
                         //間違っていたら誤回答リストに加える
@@ -58,9 +62,9 @@ struct ContentView: View {
                         .padding()
                 }
                 
-                
+                /*
                 //まだ残りの問題がある時
-                if(self.userData.unQuestionedNums.count > 0){
+                if(self.userData.unQuestionedLetters.count > 0){
                     //次へボタン有効
                     Button(action: {
                         //未回答のまま次の問題に行ったらこの問題を誤答リストに加える
@@ -71,7 +75,7 @@ struct ContentView: View {
                         }
                         self.submitted = false
                         self.isCorrect = false
-                        self.answerNum = self.userData.nextAnswerNum.popLast()
+                        self.answerLetter = self.userData.nextAnswerLetter.popLast()
                         })
                     {
                         Text("次へ")
@@ -83,9 +87,10 @@ struct ContentView: View {
                         .foregroundColor(Color.gray)
                         .padding()
                 }
+ */
             }
             Spacer()
-            if(self.userData.unQuestionedNums.count >= 0){
+            if(self.userData.unQuestionedLetters.count >= 0){
                 Text("あと" + String(unAnswered()) + "問あるよ")
             }else{
                 Text("もうないよ")
@@ -106,7 +111,7 @@ struct ContentView: View {
             
             Spacer()
             HStack{
-                NavigationLink(destination: ResultView(userData: userData, percent: self.completedRate())) {
+                NavigationLink(destination: ResultView(userData: userData, letters: letters, percent: self.completedRate())) {
                     Text("結果を見る")
                 }
                 Spacer()
@@ -114,49 +119,74 @@ struct ContentView: View {
                 {
                     Text("最初から")
                 }
+                Spacer()
+                //まだ残りの問題がある時
+                if(self.userData.unQuestionedLetters.count > 0){
+                    //次へボタン有効
+                    Button(action: {
+                        //未回答のまま次の問題に行ったらこの問題を誤答リストに加える
+                        if(!self.submitted){
+                            self.addIncorrectAnswer()
+                            //未出題の問題を一つ削って次の解答へ入れる
+                            self.setNextAnswer()
+                        }
+                        self.submitted = false
+                        self.isCorrect = false
+                        self.answerLetter = self.userData.nextAnswerLetter.popLast()
+                        })
+                    {
+                        Text("次へ")
+                            .padding()
+                    }
+                //もう残りの問題はないので次へボタン無効
+                }else{
+                    Text("次へ")
+                        .foregroundColor(Color.gray)
+                        .padding()
+                }
             }
         }
         .padding()
         .onAppear(perform: resetQuetions)
-        .navigationBarTitle("ヘブライ文字クイズ", displayMode: .inline)
+        .navigationBarTitle(Text(self.title), displayMode: .inline)
     }
+
     
-    func answerLetter () -> Letter? {
-        self.answerNum.map{self.letters[$0]}
-    }
     func answerLetterName () -> String {
-        self.answerLetter().map{$0.name} ?? "答えがないよ"
+        let answerId = self.answerLetter.map{$0.answerId ?? $0.id}
+        let correctPicker = pickers.filter{$0.id == answerId}.first
+        return correctPicker?.name ?? "選択肢の答えがないよ"
     }
     func answerLetterScript () -> String {
-        self.answerLetter().map{$0.script} ?? "答えがないよ"
+        self.answerLetter.map{$0.script} ?? "答えがないよ"
     }
     
     func resetQuetions () {
         self.userData.incorrectlyAnsweredLetters = []
-        self.userData.unQuestionedNums = Array(0...self.letters.count-1)
-        self.userData.unQuestionedNums.shuffle()
-        if let pop = self.userData.unQuestionedNums.popLast() {
-            self.userData.nextAnswerNum.append(pop)
+        self.userData.unQuestionedLetters = letters
+        self.userData.unQuestionedLetters.shuffle()
+        if let pop = self.userData.unQuestionedLetters.popLast() {
+            self.userData.nextAnswerLetter.append(pop)
         }
-        self.answerNum = self.userData.nextAnswerNum.popLast()
+        self.answerLetter = self.userData.nextAnswerLetter.popLast()
         self.submitted = false
     }
     
     func addIncorrectAnswer () {
-        if let answer = self.answerLetter(){
+        if let answer = self.answerLetter{
             self.userData.incorrectlyAnsweredLetters.append(answer)
         }
     }
     
     func setNextAnswer () {
-        if let pop = self.userData.unQuestionedNums.popLast(){
-            self.userData.nextAnswerNum.append(pop)
+        if let pop = self.userData.unQuestionedLetters.popLast(){
+            self.userData.nextAnswerLetter.append(pop)
         }
     }
     
     func unAnswered() -> Int {
-        return self.userData.unQuestionedNums.count
-        + (self.userData.unQuestionedNums.count == 0 ?
+        return self.userData.unQuestionedLetters.count
+        + (self.userData.unQuestionedLetters.count == 0 ?
             (self.submitted ?
                 0 : 1)
             : 1)
@@ -170,8 +200,15 @@ struct ContentView: View {
     }
 }
 
+
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(
+            /*letters: lettersData[0].letters,
+            pickers: lettersData[0].letters,*/
+            letters: lettersData[1].letters,
+            pickers: lettersData[1].pickers!,
+            title: "何かタイトル"
+        )
     }
 }
