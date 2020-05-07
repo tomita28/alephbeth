@@ -11,45 +11,49 @@ import SwiftUI
 struct MainView: View {
     
     var body: some View {
-        NavigationView{
-            List{
-                HStack{
-                    Spacer()
-                    Text("メニューを選んでね")
-                    .fontWeight(.thin)
-                }
-                NavigationLink(destination: ContentView(
+        VStack{
+            NavigationView{
+                List{
+                    HStack{
+                        Spacer()
+                        Text("メニューを選んでね")
+                        .fontWeight(.thin)
+                    }
+                    NavigationLink(destination: ContentView(
+                            letters: lettersData[0].letters,
+                            pickers: lettersData[0].letters,
+                            title: "ヘブライ文字クイズ"
+                            ))
+                    {
+                        Text("ヘブライ文字クイズ")
+                    }
+                    NavigationLink(destination: ContentView(
+                            withUnderScores: false,
+                            letters: lettersData[1].letters,
+                            pickers: lettersData[1].pickers!,
+                            title: "母音記号クイズ"))
+                    {
+                        Text("母音記号クイズ")
+                    }
+                    NavigationLink(destination: LetterList(
                         letters: lettersData[0].letters,
-                        pickers: lettersData[0].letters,
-                        title: "ヘブライ文字クイズ"
-                        ))
-                {
-                    Text("ヘブライ文字クイズ")
-                }
-                NavigationLink(destination: ContentView(
+                        title: "ヘブライ文字を覚える"))
+                    {
+                        Text("ヘブライ文字を覚える")
+                    }
+                    NavigationLink(destination: LetterList(
                         withUnderScores: false,
                         letters: lettersData[1].letters,
                         pickers: lettersData[1].pickers!,
-                        title: "母音記号クイズ"))
-                {
-                    Text("母音記号クイズ")
+                        title: "母音記号を覚える"))
+                    {
+                        Text("母音記号を覚える")
+                    }
                 }
-                NavigationLink(destination: LetterList(
-                    letters: lettersData[0].letters,
-                    title: "ヘブライ文字を覚える"))
-                {
-                    Text("ヘブライ文字を覚える")
-                }
-                NavigationLink(destination: LetterList(
-                    withUnderScores: false, 
-                    letters: lettersData[1].letters,
-                    pickers: lettersData[1].pickers!,
-                    title: "母音記号を覚える"))
-                {
-                    Text("母音記号を覚える")
-                }
+                .navigationBarTitle(Text("ヘブライ文字暗記"))
             }
-            .navigationBarTitle(Text("ヘブライ文字暗記"))
+        
+            Banner()
         }
     }
 }

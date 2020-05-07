@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		241BA23D17C4D8B3D0F82D4C /* Pods_alephbeth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E19CF96D30FE3BD10ADDF6C0 /* Pods_alephbeth.framework */; };
 		D71AFB7124626D470027400E /* Letters.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71AFB7024626D470027400E /* Letters.swift */; };
 		D73BCE88245BE8F2001B5A35 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73BCE87245BE8F2001B5A35 /* AppDelegate.swift */; };
 		D73BCE8A245BE8F2001B5A35 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73BCE89245BE8F2001B5A35 /* SceneDelegate.swift */; };
@@ -18,6 +19,7 @@
 		D759442C246152D4002B46B3 /* Dana Yad Alef Alef Alef Normal.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D759442B246152D4002B46B3 /* Dana Yad Alef Alef Alef Normal.ttf */; };
 		D77262642460EE1600D0E547 /* KtavYadCLM-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D77262632460EC7E00D0E547 /* KtavYadCLM-BoldItalic.ttf */; };
 		D77262662461067700D0E547 /* Yoav Cursive.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D77262652461067700D0E547 /* Yoav Cursive.ttf */; };
+		D7A5D9182464C9C500C5F3FD /* Banner.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A5D9172464C9C500C5F3FD /* Banner.swift */; };
 		D7F40344245CE99D0059232C /* NonLetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F40343245CE99D0059232C /* NonLetter.swift */; };
 		D7F40349245CF1B90059232C /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F40348245CF1B90059232C /* Data.swift */; };
 		D7F4034C245CFF210059232C /* letterData.json in Resources */ = {isa = PBXBuildFile; fileRef = D7F40345245CEA9D0059232C /* letterData.json */; };
@@ -30,6 +32,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2B50572E034CF4853729F077 /* Pods-alephbeth.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-alephbeth.release.xcconfig"; path = "Target Support Files/Pods-alephbeth/Pods-alephbeth.release.xcconfig"; sourceTree = "<group>"; };
 		D71AFB7024626D470027400E /* Letters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Letters.swift; sourceTree = "<group>"; };
 		D73BCE84245BE8F2001B5A35 /* alephbeth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = alephbeth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D73BCE87245BE8F2001B5A35 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -43,6 +46,7 @@
 		D759442B246152D4002B46B3 /* Dana Yad Alef Alef Alef Normal.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Dana Yad Alef Alef Alef Normal.ttf"; sourceTree = "<group>"; };
 		D77262632460EC7E00D0E547 /* KtavYadCLM-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "KtavYadCLM-BoldItalic.ttf"; sourceTree = "<group>"; };
 		D77262652461067700D0E547 /* Yoav Cursive.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Yoav Cursive.ttf"; sourceTree = "<group>"; };
+		D7A5D9172464C9C500C5F3FD /* Banner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Banner.swift; sourceTree = "<group>"; };
 		D7F40343245CE99D0059232C /* NonLetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NonLetter.swift; sourceTree = "<group>"; };
 		D7F40345245CEA9D0059232C /* letterData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = letterData.json; sourceTree = "<group>"; };
 		D7F40348245CF1B90059232C /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
@@ -52,6 +56,8 @@
 		D7FB63AF245FA4AB00662D4E /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		D7FB63B3245FA5FF00662D4E /* LetterRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterRow.swift; sourceTree = "<group>"; };
 		D7FB63B5245FB21C00662D4E /* LetterExplanation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterExplanation.swift; sourceTree = "<group>"; };
+		E19CF96D30FE3BD10ADDF6C0 /* Pods_alephbeth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_alephbeth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB4E13A62E9B3AB65CB9CD02 /* Pods-alephbeth.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-alephbeth.debug.xcconfig"; path = "Target Support Files/Pods-alephbeth/Pods-alephbeth.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,17 +65,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				241BA23D17C4D8B3D0F82D4C /* Pods_alephbeth.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4776F24A9C6F4C49B1933510 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E19CF96D30FE3BD10ADDF6C0 /* Pods_alephbeth.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A47C150C32D429BAED129009 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FB4E13A62E9B3AB65CB9CD02 /* Pods-alephbeth.debug.xcconfig */,
+				2B50572E034CF4853729F077 /* Pods-alephbeth.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		D73BCE7B245BE8F2001B5A35 = {
 			isa = PBXGroup;
 			children = (
 				D73BCE86245BE8F2001B5A35 /* alephbeth */,
 				D73BCE85245BE8F2001B5A35 /* Products */,
+				A47C150C32D429BAED129009 /* Pods */,
+				4776F24A9C6F4C49B1933510 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -92,6 +118,7 @@
 				D7FB63AB245FA17600662D4E /* LetterList.swift */,
 				D7FB63B5245FB21C00662D4E /* LetterExplanation.swift */,
 				D7FB63B3245FA5FF00662D4E /* LetterRow.swift */,
+				D7A5D9172464C9C500C5F3FD /* Banner.swift */,
 				D7F40346245CF0B20059232C /* Models */,
 				D73BCE8D245BE8F7001B5A35 /* Assets.xcassets */,
 				D73BCE92245BE8F7001B5A35 /* LaunchScreen.storyboard */,
@@ -148,9 +175,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D73BCE98245BE8F7001B5A35 /* Build configuration list for PBXNativeTarget "alephbeth" */;
 			buildPhases = (
+				29949AA792DAF3CB54409B12 /* [CP] Check Pods Manifest.lock */,
 				D73BCE80245BE8F2001B5A35 /* Sources */,
 				D73BCE81245BE8F2001B5A35 /* Frameworks */,
 				D73BCE82245BE8F2001B5A35 /* Resources */,
+				6E5EAF2A2DF672467952FA87 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -212,6 +241,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		29949AA792DAF3CB54409B12 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-alephbeth-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6E5EAF2A2DF672467952FA87 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-alephbeth/Pods-alephbeth-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-alephbeth/Pods-alephbeth-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-alephbeth/Pods-alephbeth-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D73BCE80245BE8F2001B5A35 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -219,6 +290,7 @@
 			files = (
 				D7F4034E245D20600059232C /* UserData.swift in Sources */,
 				D7FB63AC245FA17600662D4E /* LetterList.swift in Sources */,
+				D7A5D9182464C9C500C5F3FD /* Banner.swift in Sources */,
 				D7FB63B0245FA4AB00662D4E /* ResultView.swift in Sources */,
 				D71AFB7124626D470027400E /* Letters.swift in Sources */,
 				D7FB63AA245FA03400662D4E /* MainView.swift in Sources */,
@@ -362,6 +434,7 @@
 		};
 		D73BCE99245BE8F7001B5A35 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FB4E13A62E9B3AB65CB9CD02 /* Pods-alephbeth.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -382,6 +455,7 @@
 		};
 		D73BCE9A245BE8F7001B5A35 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2B50572E034CF4853729F077 /* Pods-alephbeth.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
