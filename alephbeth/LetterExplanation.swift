@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct LetterExplanation: View {
+    var withUnderScores: Bool?
     var letter: Letters.Letter
     var letters: [Letters.Letter]
     var pickers: [Pickable]
@@ -16,11 +17,13 @@ struct LetterExplanation: View {
         ScrollView{
             Text("いいから覚えるんだ")
                 .padding()
-            Text("左右の横線（アンダースコア）を文字の高さの基準にしてください。")
-                .padding()
-            self.displayFont(text: Text("_" + letter.script + "_"), name: "活字体")
+            if(withUnderScores ?? true){
+                Text("左右の横線（アンダースコア）を文字の高さの基準にしてください。")
+                    .padding()
+            }
+            self.displayFont(text: Text(self.textWithUnderScores(string: letter.script)), name: "活字体")
             if(!(letter.dagesh ?? true)){
-                self.displayFont(text: Text("_" + letter.script + "_")
+                self.displayFont(text: Text(self.textWithUnderScores(string: letter.script))
                     .font(.custom("KtavYadCLM-BoldItalic", size: 150))
                 , name:"筆記体")
 
@@ -53,6 +56,14 @@ struct LetterExplanation: View {
             Text(letter.explanation).padding()
         }
         .navigationBarTitle(Text(letter.script), displayMode: .inline)
+    }
+    
+    func textWithUnderScores(string: String) -> String {
+        if (self.withUnderScores ?? true ) {
+            return "_" + string + "_"
+        }else{
+            return string
+        }
     }
     
     func findLetterById(id: Int) -> Letters.Letter{

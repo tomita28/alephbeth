@@ -27,6 +27,7 @@ struct MainView: View {
                     Text("ヘブライ文字クイズ")
                 }
                 NavigationLink(destination: ContentView(
+                        withUnderScores: false,
                         letters: lettersData[1].letters,
                         pickers: lettersData[1].pickers!,
                         title: "母音記号クイズ"))
@@ -40,6 +41,7 @@ struct MainView: View {
                     Text("ヘブライ文字を覚える")
                 }
                 NavigationLink(destination: LetterList(
+                    withUnderScores: false, 
                     letters: lettersData[1].letters,
                     pickers: lettersData[1].pickers!,
                     title: "母音記号を覚える"))

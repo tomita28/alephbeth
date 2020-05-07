@@ -10,7 +10,9 @@ import SwiftUI
 
 struct ResultView: View {
     @ObservedObject var userData: UserData
+    var withUnderScores: Bool?
     let letters: [Letters.Letter]
+    var pickers: [Pickable]?
     let percent: Double
 
 
@@ -30,7 +32,10 @@ struct ResultView: View {
 
             Spacer()
             LetterList(
-                letters: userData.incorrectlyAnsweredLetters,
+                withUnderScores: self.withUnderScores,
+                letters: letters,
+                listedUpLetters: userData.incorrectlyAnsweredLetters,
+                pickers: pickers ?? letters,
                 title: "間違えた文字を復習しよう")
         }
         .navigationBarTitle("間違えた文字たち", displayMode: .inline)

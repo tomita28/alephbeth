@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    
+    var withUnderScores: Bool?
     let letters: [Letters.Letter]
     let pickers: [Pickable]
     let title: String
@@ -111,7 +111,12 @@ struct ContentView: View {
             
             Spacer()
             HStack{
-                NavigationLink(destination: ResultView(userData: userData, letters: letters, percent: self.completedRate())) {
+                NavigationLink(destination: ResultView(
+                    userData: userData,
+                    withUnderScores: self.withUnderScores,
+                    letters: letters,
+                    pickers: pickers,
+                    percent: self.completedRate())) {
                     Text("結果を見る")
                 }
                 Spacer()
