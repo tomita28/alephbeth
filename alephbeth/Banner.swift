@@ -17,9 +17,9 @@ final private class BannerVC: UIViewControllerRepresentable  {
         let view = GADBannerView(adSize: kGADAdSizeBanner)
         
         //test用bannerID
-        let bannerID = "ca-app-pub-3940256099942544/2934735716"
+        //let bannerID = "ca-app-pub-3940256099942544/2934735716"
         //本番用bannerID: first_banner
-        //let bannerID = "ca-app-pub-3865271057827792/9425055269"
+        let bannerID = "ca-app-pub-3865271057827792/9425055269"
 
         let viewController = UIViewController()
         view.adUnitID = bannerID

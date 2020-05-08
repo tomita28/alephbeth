@@ -20,6 +20,8 @@
 		D77262642460EE1600D0E547 /* KtavYadCLM-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D77262632460EC7E00D0E547 /* KtavYadCLM-BoldItalic.ttf */; };
 		D77262662461067700D0E547 /* Yoav Cursive.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D77262652461067700D0E547 /* Yoav Cursive.ttf */; };
 		D7A5D9182464C9C500C5F3FD /* Banner.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A5D9172464C9C500C5F3FD /* Banner.swift */; };
+		D7D6162224651F8900954E8E /* English.md in Resources */ = {isa = PBXBuildFile; fileRef = D7D6162124651F8900954E8E /* English.md */; };
+		D7D616242465214F00954E8E /* Japanese.md in Resources */ = {isa = PBXBuildFile; fileRef = D7D616232465214F00954E8E /* Japanese.md */; };
 		D7F40344245CE99D0059232C /* NonLetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F40343245CE99D0059232C /* NonLetter.swift */; };
 		D7F40349245CF1B90059232C /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F40348245CF1B90059232C /* Data.swift */; };
 		D7F4034C245CFF210059232C /* letterData.json in Resources */ = {isa = PBXBuildFile; fileRef = D7F40345245CEA9D0059232C /* letterData.json */; };
@@ -47,6 +49,8 @@
 		D77262632460EC7E00D0E547 /* KtavYadCLM-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "KtavYadCLM-BoldItalic.ttf"; sourceTree = "<group>"; };
 		D77262652461067700D0E547 /* Yoav Cursive.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Yoav Cursive.ttf"; sourceTree = "<group>"; };
 		D7A5D9172464C9C500C5F3FD /* Banner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Banner.swift; sourceTree = "<group>"; };
+		D7D6162124651F8900954E8E /* English.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = English.md; sourceTree = "<group>"; };
+		D7D616232465214F00954E8E /* Japanese.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Japanese.md; sourceTree = "<group>"; };
 		D7F40343245CE99D0059232C /* NonLetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NonLetter.swift; sourceTree = "<group>"; };
 		D7F40345245CEA9D0059232C /* letterData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = letterData.json; sourceTree = "<group>"; };
 		D7F40348245CF1B90059232C /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
@@ -92,6 +96,7 @@
 		D73BCE7B245BE8F2001B5A35 = {
 			isa = PBXGroup;
 			children = (
+				D7D6161F24651F1E00954E8E /* docs */,
 				D73BCE86245BE8F2001B5A35 /* alephbeth */,
 				D73BCE85245BE8F2001B5A35 /* Products */,
 				A47C150C32D429BAED129009 /* Pods */,
@@ -147,6 +152,23 @@
 				D77262632460EC7E00D0E547 /* KtavYadCLM-BoldItalic.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		D7D6161F24651F1E00954E8E /* docs */ = {
+			isa = PBXGroup;
+			children = (
+				D7D6162024651F4B00954E8E /* PrivacyPolicy */,
+			);
+			path = docs;
+			sourceTree = "<group>";
+		};
+		D7D6162024651F4B00954E8E /* PrivacyPolicy */ = {
+			isa = PBXGroup;
+			children = (
+				D7D6162124651F8900954E8E /* English.md */,
+				D7D616232465214F00954E8E /* Japanese.md */,
+			);
+			path = PrivacyPolicy;
 			sourceTree = "<group>";
 		};
 		D7F40346245CF0B20059232C /* Models */ = {
@@ -231,7 +253,9 @@
 				D77262662461067700D0E547 /* Yoav Cursive.ttf in Resources */,
 				D7F4034C245CFF210059232C /* letterData.json in Resources */,
 				D73BCE94245BE8F7001B5A35 /* LaunchScreen.storyboard in Resources */,
+				D7D6162224651F8900954E8E /* English.md in Resources */,
 				D759442A2461501E002B46B3 /* ktavyadclm-mediumitalic-webfont.ttf in Resources */,
+				D7D616242465214F00954E8E /* Japanese.md in Resources */,
 				D73BCE91245BE8F7001B5A35 /* Preview Assets.xcassets in Resources */,
 				D759442C246152D4002B46B3 /* Dana Yad Alef Alef Alef Normal.ttf in Resources */,
 				D73BCE8E245BE8F7001B5A35 /* Assets.xcassets in Resources */,
