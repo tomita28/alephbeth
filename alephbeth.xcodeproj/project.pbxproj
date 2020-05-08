@@ -34,7 +34,7 @@
 /* Begin PBXFileReference section */
 		2B50572E034CF4853729F077 /* Pods-alephbeth.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-alephbeth.release.xcconfig"; path = "Target Support Files/Pods-alephbeth/Pods-alephbeth.release.xcconfig"; sourceTree = "<group>"; };
 		D71AFB7024626D470027400E /* Letters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Letters.swift; sourceTree = "<group>"; };
-		D73BCE84245BE8F2001B5A35 /* alephbeth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = alephbeth.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D73BCE84245BE8F2001B5A35 /* AlephBeth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlephBeth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D73BCE87245BE8F2001B5A35 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D73BCE89245BE8F2001B5A35 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		D73BCE8B245BE8F2001B5A35 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -102,7 +102,7 @@
 		D73BCE85245BE8F2001B5A35 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D73BCE84245BE8F2001B5A35 /* alephbeth.app */,
+				D73BCE84245BE8F2001B5A35 /* AlephBeth.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -187,7 +187,7 @@
 			);
 			name = alephbeth;
 			productName = alephbeth;
-			productReference = D73BCE84245BE8F2001B5A35 /* alephbeth.app */;
+			productReference = D73BCE84245BE8F2001B5A35 /* AlephBeth.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -447,7 +447,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = jp.dommydyson.ios.alephbeth;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = AlephBeth;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -468,7 +468,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = jp.dommydyson.ios.alephbeth;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = AlephBeth;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

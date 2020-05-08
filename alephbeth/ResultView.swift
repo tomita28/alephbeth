@@ -11,6 +11,7 @@ import SwiftUI
 struct ResultView: View {
     @ObservedObject var userData: UserData
     var withUnderScores: Bool?
+    var questionAmount: Int?
     let letters: [Letters.Letter]
     var pickers: [Pickable]?
     let percent: Double
@@ -24,11 +25,18 @@ struct ResultView: View {
                 )
                 + "%！"
             ).padding()
-            Text("全問題数: " + String(self.letters.count))
+            Text("全問題数: " + String(self.questionAmount ?? self.letters.count))
             //Text("unqueestioned: " + String(self.userData.unQuestionedNums.count))
             //Text("next:" + String(self.userData.nextAnswerNum.count))
             Text("誤答数: " + String(userData.incorrectlyAnsweredLetters.count))
-            
+            NavigationLink(destination: ContentView(
+                letters: letters,
+                questionedLetters: userData.incorrectlyAnsweredLetters,
+                pickers: pickers ?? letters,
+                title: "間違えた文字だけをテスト"
+            )){
+                Text("間違えた文字だけをテストする").fontWeight(.heavy).foregroundColor(Color.blue).padding()
+            }
 
             Spacer()
             LetterList(

@@ -11,6 +11,7 @@ import SwiftUI
 struct ContentView: View {
     var withUnderScores: Bool?
     let letters: [Letters.Letter]
+    var questionedLetters: [Letters.Letter]?
     let pickers: [Pickable]
     let title: String
     
@@ -90,7 +91,7 @@ struct ContentView: View {
  */
             }
             Spacer()
-            if(self.userData.unQuestionedLetters.count >= 0){
+            if(self.unAnswered() > 0){
                 Text("あと" + String(unAnswered()) + "問あるよ")
             }else{
                 Text("もうないよ")
@@ -114,6 +115,7 @@ struct ContentView: View {
                 NavigationLink(destination: ResultView(
                     userData: userData,
                     withUnderScores: self.withUnderScores,
+                    questionAmount: self.questionedLetters?.count,
                     letters: letters,
                     pickers: pickers,
                     percent: self.completedRate())) {
@@ -126,7 +128,8 @@ struct ContentView: View {
                 }
                 Spacer()
                 //まだ残りの問題がある時
-                if(self.userData.unQuestionedLetters.count > 0){
+                if(self.unAnswered() > 1 && !self.submitted
+                    || self.unAnswered() > 0 && self.submitted){
                     //次へボタン有効
                     Button(action: {
                         //未回答のまま次の問題に行ったらこの問題を誤答リストに加える
@@ -168,7 +171,8 @@ struct ContentView: View {
     
     func resetQuetions () {
         self.userData.incorrectlyAnsweredLetters = []
-        self.userData.unQuestionedLetters = letters
+        self.userData.nextAnswerLetter = []
+        self.userData.unQuestionedLetters = questionedLetters ?? letters
         self.userData.unQuestionedLetters.shuffle()
         if let pop = self.userData.unQuestionedLetters.popLast() {
             self.userData.nextAnswerLetter.append(pop)
@@ -191,15 +195,15 @@ struct ContentView: View {
     
     func unAnswered() -> Int {
         return self.userData.unQuestionedLetters.count
-        + (self.userData.unQuestionedLetters.count == 0 ?
-            (self.submitted ?
-                0 : 1)
-            : 1)
+            + self.userData.nextAnswerLetter.count
+            + (self.submitted ? 0 : 1)
+           
     }
     
     func completedRate () -> Double {
-        let completed = letters.count - self.userData.incorrectlyAnsweredLetters.count - self.unAnswered()
-        let rate = Double(completed) / Double(letters.count)
+        let allLetters = questionedLetters ?? letters
+        let completed = allLetters.count - self.userData.incorrectlyAnsweredLetters.count - self.unAnswered()
+        let rate = Double(completed) / Double(allLetters.count)
         let percent = rate * 100.0
         return percent
     }
@@ -212,6 +216,7 @@ struct ContentView_Previews: PreviewProvider {
             /*letters: lettersData[0].letters,
             pickers: lettersData[0].letters,*/
             letters: lettersData[1].letters,
+            questionedLetters: lettersData[1].letters.filter{$0.id < 7},
             pickers: lettersData[1].pickers!,
             title: "何かタイトル"
         )

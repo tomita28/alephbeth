@@ -10,12 +10,16 @@ import SwiftUI
 
 struct LetterRow: View {
     var letter: Letters.Letter
+    var letterPronunciation: String?
     
     var body: some View {
         HStack{
             Text(letter.script)
                 .font(.largeTitle)
                 .padding(.trailing)
+            if(letterPronunciation != nil){
+                Text(letterPronunciation!).padding()
+            }
             Text(letter.name)
             Spacer()
         }
@@ -27,7 +31,9 @@ struct LetterRow_Previews: PreviewProvider {
     static var previews: some View {
         Group{
             LetterRow(letter: lettersData[0].letters[0])
-            LetterRow(letter: lettersData[0].letters[1])
+            LetterRow(
+                letter: lettersData[1].letters[1],
+                letterPronunciation: lettersData[1].pickers![0].name)
         }
         .previewLayout(.fixed(width: 300, height: 70))
     }

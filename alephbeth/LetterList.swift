@@ -25,9 +25,19 @@ struct LetterList: View {
                 letters: self.letters,
                 pickers: self.pickers ?? self.letters
             )){
-                LetterRow(letter: letter)
+                LetterRow(
+                    letter: letter,
+                    letterPronunciation: self.getPronunciationOfLetter(letter: letter)
+                )
             }
         }.navigationBarTitle(Text(self.title), displayMode: .inline)
+    }
+    func getPronunciationOfLetter(letter: Letters.Letter) -> String?{
+        letter.answerId.flatMap{answerId in
+            pickers?.filter{picker in
+                picker.id == answerId
+                }.first
+        }.map{$0.name}
     }
 }
 
@@ -35,8 +45,9 @@ struct LetterList: View {
 struct LetterList_Previews: PreviewProvider {
     static var previews: some View {
         LetterList(
-            letters: lettersData[0].letters,
-            listedUpLetters: [lettersData[0].letters[1]],
+            letters: lettersData[1].letters,
+            listedUpLetters: [lettersData[1].letters[1]],
+            pickers: lettersData[1].pickers,
             title: "ヘブライ文字を覚える"
         )
     }
