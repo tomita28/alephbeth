@@ -10,6 +10,7 @@ import SwiftUI
 
 struct ResultView: View {
     @EnvironmentObject var userData: UserData
+    @ObservedObject var quizData: QuizData
     var withUnderScores: Bool?
     var questionAmount: Int?
     let letters: [Letters.Letter]
@@ -28,10 +29,10 @@ struct ResultView: View {
             Text("全問題数: " + String(self.questionAmount ?? self.letters.count))
             //Text("unqueestioned: " + String(self.userData.unQuestionedNums.count))
             //Text("next:" + String(self.userData.nextAnswerNum.count))
-            Text("誤答数: " + String(userData.incorrectlyAnsweredLetters.count))
+            Text("誤答数: " + String(quizData.incorrectlyAnsweredLetters.count))
             NavigationLink(destination: ContentView(
                 letters: letters,
-                questionedLetters: userData.incorrectlyAnsweredLetters,
+                questionedLetters: quizData.incorrectlyAnsweredLetters,
                 pickers: pickers ?? letters,
                 title: "間違えた文字だけをテスト"
             ).environmentObject(userData)){
@@ -42,7 +43,7 @@ struct ResultView: View {
             LetterList(
                 withUnderScores: self.withUnderScores,
                 letters: letters,
-                listedUpLetters: userData.incorrectlyAnsweredLetters,
+                listedUpLetters: quizData.incorrectlyAnsweredLetters,
                 pickers: pickers ?? letters,
                 title: "間違えた文字を復習しよう")
         }
@@ -53,15 +54,19 @@ struct ResultView: View {
 
 struct ResultView_Previews: PreviewProvider {
     static var previews: some View {
-        let userData = UserData()
-        userData.incorrectlyAnsweredLetters =
+        let quizData = QuizData()
+        quizData.incorrectlyAnsweredLetters =
             lettersData[0].letters
             //[
             //letterData[0],
             //letterData[1],
             //letterData[2]
         //]
-        userData.unQuestionedLetters = []
-        return ResultView(letters: lettersData[0].letters, percent: 0).environmentObject(userData)
+        quizData.unQuestionedLetters = []
+        return ResultView(
+            quizData: quizData,
+            letters: lettersData[0].letters,
+            percent: 0)
+            //.environmentObject(userData)
     }
 }

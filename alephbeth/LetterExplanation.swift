@@ -32,7 +32,10 @@ struct LetterExplanation: View {
             
             HStack{
                 Text("名前:")
-                Text(letter.name[userData.transliterationMode.rawValue] ?? "名前がないよ").font(.system(.largeTitle))
+                Text(
+                    letter.name[TransliterationMode.Common.rawValue]
+                    ?? letter.name[userData.transliterationMode.rawValue]!
+                ).font(.system(.largeTitle))
             }
             if(letter.dagesh ?? false){
                 HStack{

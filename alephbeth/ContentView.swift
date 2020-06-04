@@ -15,6 +15,7 @@ struct ContentView: View {
     let pickers: [Pickable]
     let title: String
     
+    @ObservedObject var quizData = QuizData()
     @EnvironmentObject var userData: UserData
     
     @State var selection = 0
@@ -92,11 +93,14 @@ struct ContentView: View {
             Spacer()
             HStack{
                 NavigationLink(destination: ResultView(
+                    quizData: quizData,
                     withUnderScores: self.withUnderScores,
                     questionAmount: self.questionedLetters?.count,
                     letters: letters,
                     pickers: pickers,
-                    percent: self.completedRate()).environmentObject(userData)) {
+                    percent: self.completedRate())
+                    .environmentObject(userData)
+                ) {
                     Text("結果を見る")
                 }
                 Spacer()
@@ -118,7 +122,7 @@ struct ContentView: View {
                         }
                         self.submitted = false
                         self.isCorrect = false
-                        self.answerLetter = self.userData.nextAnswerLetter.popLast()
+                        self.answerLetter = self.quizData.nextAnswerLetter.popLast()
                         })
                     {
                         Text("次へ")
@@ -149,45 +153,45 @@ struct ContentView: View {
     }
     
     func resetQuetions () {
-        self.userData.incorrectlyAnsweredLetters = []
-        self.userData.nextAnswerLetter = []
-        self.userData.unQuestionedLetters = (questionedLetters ?? letters)
+        self.quizData.incorrectlyAnsweredLetters = []
+        self.quizData.nextAnswerLetter = []
+        self.quizData.unQuestionedLetters = (questionedLetters ?? letters)
             .filter{
                 let contains = $0.name.keys.contains
                 return contains(TransliterationMode.Common.rawValue)
                 || contains(userData.transliterationMode.rawValue)
                 
         }
-        self.userData.unQuestionedLetters.shuffle()
-        if let pop = self.userData.unQuestionedLetters.popLast() {
-            self.userData.nextAnswerLetter.append(pop)
+        self.quizData.unQuestionedLetters.shuffle()
+        if let pop = self.quizData.unQuestionedLetters.popLast() {
+            self.quizData.nextAnswerLetter.append(pop)
         }
-        self.answerLetter = self.userData.nextAnswerLetter.popLast()
+        self.answerLetter = self.quizData.nextAnswerLetter.popLast()
         self.submitted = false
     }
     
     func addIncorrectAnswer () {
         if let answer = self.answerLetter{
-            self.userData.incorrectlyAnsweredLetters.append(answer)
+            self.quizData.incorrectlyAnsweredLetters.append(answer)
         }
     }
     
     func setNextAnswer () {
-        if let pop = self.userData.unQuestionedLetters.popLast(){
-            self.userData.nextAnswerLetter.append(pop)
+        if let pop = self.quizData.unQuestionedLetters.popLast(){
+            self.quizData.nextAnswerLetter.append(pop)
         }
     }
     
     func unAnswered() -> Int {
-        return self.userData.unQuestionedLetters.count
-            + self.userData.nextAnswerLetter.count
+        return self.quizData.unQuestionedLetters.count
+            + self.quizData.nextAnswerLetter.count
             + (self.submitted ? 0 : 1)
            
     }
     
     func completedRate () -> Double {
         let allLetters = questionedLetters ?? letters
-        let completed = allLetters.count - self.userData.incorrectlyAnsweredLetters.count - self.unAnswered()
+        let completed = allLetters.count - self.quizData.incorrectlyAnsweredLetters.count - self.unAnswered()
         let rate = Double(completed) / Double(allLetters.count)
         let percent = rate * 100.0
         return percent

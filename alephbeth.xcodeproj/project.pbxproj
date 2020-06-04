@@ -21,6 +21,7 @@
 		D77262662461067700D0E547 /* Yoav Cursive.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D77262652461067700D0E547 /* Yoav Cursive.ttf */; };
 		D7A5D9182464C9C500C5F3FD /* Banner.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A5D9172464C9C500C5F3FD /* Banner.swift */; };
 		D7C8D138248757EC0098C674 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C8D137248757EC0098C674 /* SettingView.swift */; };
+		D7D556002488A088004679E6 /* QuizData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D555FF2488A088004679E6 /* QuizData.swift */; };
 		D7D6162224651F8900954E8E /* English.html in Resources */ = {isa = PBXBuildFile; fileRef = D7D6162124651F8900954E8E /* English.html */; };
 		D7D616242465214F00954E8E /* Japanese.html in Resources */ = {isa = PBXBuildFile; fileRef = D7D616232465214F00954E8E /* Japanese.html */; };
 		D7F40344245CE99D0059232C /* NonLetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F40343245CE99D0059232C /* NonLetter.swift */; };
@@ -51,6 +52,7 @@
 		D77262652461067700D0E547 /* Yoav Cursive.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Yoav Cursive.ttf"; sourceTree = "<group>"; };
 		D7A5D9172464C9C500C5F3FD /* Banner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Banner.swift; sourceTree = "<group>"; };
 		D7C8D137248757EC0098C674 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		D7D555FF2488A088004679E6 /* QuizData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizData.swift; sourceTree = "<group>"; };
 		D7D6162124651F8900954E8E /* English.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = English.html; sourceTree = "<group>"; };
 		D7D616232465214F00954E8E /* Japanese.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = Japanese.html; sourceTree = "<group>"; };
 		D7F40343245CE99D0059232C /* NonLetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NonLetter.swift; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 				D7F40348245CF1B90059232C /* Data.swift */,
 				D7F4034D245D20600059232C /* UserData.swift */,
 				D71AFB7024626D470027400E /* Letters.swift */,
+				D7D555FF2488A088004679E6 /* QuizData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -328,6 +331,7 @@
 				D73BCE8A245BE8F2001B5A35 /* SceneDelegate.swift in Sources */,
 				D7FB63B6245FB21C00662D4E /* LetterExplanation.swift in Sources */,
 				D73BCE8C245BE8F2001B5A35 /* ContentView.swift in Sources */,
+				D7D556002488A088004679E6 /* QuizData.swift in Sources */,
 				D7F40344245CE99D0059232C /* NonLetter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

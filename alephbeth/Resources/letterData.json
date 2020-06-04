@@ -90,7 +90,7 @@
             {
                 "id": 7,
                 "name": {
-                    "HebrewAcademy2006": "hei",
+                    "HebrewAcademy2006": "he",
                     "Lambdin": "hē",
                 },
                 "script": "ה",
@@ -126,7 +126,7 @@
             {
                 "id": 10,
                 "name": {
-                    "HebrewAcademy2006": "chet",
+                    "HebrewAcademy2006": "ẖet",
                     "Lambdin": "ḥēṯ",
                 },
                 "script": "ח",
@@ -162,7 +162,7 @@
             {
                 "id": 13,
                 "name": {
-                    "HebrewAcademy2006": "chaf",
+                    "HebrewAcademy2006": "khaf",
                     "Lambdin": "ḵap̄",
                 },
                 "script": "כ",
@@ -256,7 +256,7 @@
             {
                 "id": 21,
                 "name": {
-                    "HebrewAcademy2006": "samech",
+                    "HebrewAcademy2006": "samekh",
                     "Lambdin": "sā́meḵ",
                 },
                 "script": "ס",
@@ -269,7 +269,7 @@
                 "id": 22,
                 "name": {
                     "HebrewAcademy2006": "ayin",
-                    "Lambdin": "‘áyin",
+                    "Lambdin": "ʿáyin",
                 },
                 "script": "ע",
                 "sofit": false,
@@ -280,7 +280,7 @@
             {
                 "id": 23,
                 "name": {
-                    "HebrewAcademy2006": "fei",
+                    "HebrewAcademy2006": "fe",
                     "Lambdin": "p̄ēh",
                 },
                 "script": "פ",
@@ -292,7 +292,7 @@
             {
                 "id": 24,
                 "name": {
-                    "HebrewAcademy2006": "pei",
+                    "HebrewAcademy2006": "pe",
                     "Lambdin": "pēh",
                 },
                 "script": "פּ",
@@ -316,7 +316,7 @@
             {
                 "id": 26,
                 "name": {
-                    "HebrewAcademy2006": "tzadi",
+                    "HebrewAcademy2006": "tsadi",
                     "Lambdin": "ṣāḏēh",
                 },
                 "script": "צ",
@@ -328,7 +328,7 @@
             {
                 "id": 27,
                 "name": {
-                    "HebrewAcademy2006": "tzadi sofit",
+                    "HebrewAcademy2006": "tsadi sofit",
                     "Lambdin": "ṣāḏēh sôp̄îṯ",
                 },
                 "script": "ץ",
@@ -352,7 +352,7 @@
             {
                 "id": 29,
                 "name": {
-                    "HebrewAcademy2006": "reish",
+                    "HebrewAcademy2006": "resh",
                     "Lambdin": "rēs̆",
                 },
                 "script": "ר",
@@ -454,7 +454,7 @@
             {
                 "id": 6,
                 "name": {
-                    "Common": "ə/[no vowel]",
+                    "Common": "ə(e)/(no vowel)",
                 },
             },
         ],
@@ -462,16 +462,18 @@
             {
                 "id": 0,
                 "name": {
-                    "Common": "kamatz",
+                    "HebrewAcademy2006": "kamats",
+                    "Lambdin": "qā́meṣ",
                 },
                 "answerId": 5,
                 "script": "אָ",
-                "explanation": "カマツ。発音が文脈に応じて二種類あるので、aと発音する方をカマツ・ガドール（大きいカマツ）、oと発音する方をカマツ・カタン（小さいカマツ）と呼ぶ。大体はaの方なのでとりあえずaと思っていてもいい。横線がある母音記号は大体a。",
+                "explanation": "カマツ。あるいはカメツ。発音が文脈に応じて二種類あるので、aと発音する方をカマツ・ガドール（大きいカマツ）、oと発音する方をカマツ・カタン（小さいカマツ）と呼ぶ。大体はaの方なのでとりあえずaと思っていてもいい。横線がある母音記号は大体a。",
             },
             {
                 "id": 1,
                 "name": {
-                    "Common": "patach",
+                    "HebrewAcademy2006": "pataẖ",
+                    "Lambdin": "páṯaḥ",
                 },
                 "answerId": 0,
                 "script": "אַ",
@@ -480,16 +482,18 @@
             {
                 "id": 2,
                 "name": {
-                    "Common": "chataf patach",
+                    "HebrewAcademy2006": "ẖataf pataẖ",
+                    "Lambdin": "ḥăṭep̄ páṯaḥ",
                 },
                 "answerId": 0,
                 "script": "אֲ",
-                "explanation": "ハタフ・パタフ。ハタフとは他の母音記号にくっつくシェバー（複合シェバー）、つまり縦に二つ並んでいる点々を指す。これがつくと母音が短くなるってことになっているけど、例によって実際の発音では変わらない。これもa。複合シェバーは主には喉音という種類の子音文字につく。",
+                "explanation": "ハタフ・パタフ。またはハテフ・パタフ。ハタフとは他の母音記号にくっつくシェバー（複合シェバー）、つまり縦に二つ並んでいる点々を指す。これがつくと母音が短くなるってことになっているけど、例によって実際の発音では変わらない。これもa。複合シェバーは主には喉音という種類の子音文字につく。",
             },
             {
                 "id": 3,
                 "name": {
-                    "Common": "tzere male",
+                    "HebrewAcademy2006": "tsere male",
+                    "Lambdin": "ṣērê mālê",
                 },
                 "answerId": 3,
                 "script": "אֵי",
@@ -498,7 +502,8 @@
             {
                 "id": 4,
                 "name": {
-                    "Common": "tzere chaser",
+                    "HebrewAcademy2006": "tsere ẖaser",
+                    "Lambdin": "ṣērê ḥāsēr",
                 },
                 "answerId": 3,
                 "script": "אֵ",
@@ -507,7 +512,8 @@
             {
                 "id": 5,
                 "name": {
-                    "Common": "segol",
+                    "HebrewAcademy2006": "seggol",
+                    "Lambdin": "səḡôl",
                 },
                 "answerId": 3,
                 "script": "אֶ",
@@ -516,7 +522,8 @@
             {
                 "id": 6,
                 "name": {
-                    "Common": "chataf segol",
+                    "HebrewAcademy2006": "ẖataf seggol",
+                    "Lambdin": "ḥăṭep̄ səḡôl",
                 },
                 "answerId": 3,
                 "script": "אֱ",
@@ -525,16 +532,18 @@
             {
                 "id": 7,
                 "name": {
-                    "Common": "chirik male",
+                    "HebrewAcademy2006": "ẖirik male",
+                    "Lambdin": "ḥîreq mālê",
                 },
                 "answerId": 1,
                 "script": "אִי",
-                "explanation": "ヒレク・マレー。iの発音。יがついていると大体ヒレクを疑っていいと思う。",
+                "explanation": "ヒリク・マレー。あるいはヒレク・マレー。iの発音。יがついていると大体ヒレクを疑っていいと思う。",
             },
             {
                 "id": 8,
                 "name": {
-                    "Common": "chirik chaser",
+                    "HebrewAcademy2006": "ẖirik ẖaser",
+                    "Lambdin": "ḥîreq ḥāsēr",
                 },
                 "answerId": 1,
                 "script": "אִ",
@@ -543,16 +552,18 @@
             {
                 "id": 9,
                 "name": {
-                    "Common": "cholam male",
+                    "HebrewAcademy2006": "ẖolam male",
+                    "Lambdin": "ḥṓlem mālê",
                 },
                 "answerId": 4,
                 "script": "אוֹ",
-                "explanation": "ホラム・マレー。文字の上に点があるとo。なぜかוが入ると母音記号はוのところにつく。",
+                "explanation": "ホラム・マレー。あるいはホレム・マレー。文字の上に点があるとo。なぜかוが入ると母音記号はוのところにつく。",
             },
             {
                 "id": 10,
                 "name": {
-                    "Common": "cholam chaser",
+                    "HebrewAcademy2006": "ẖolam ẖaser",
+                    "Lambdin": "ḥṓlem ḥāsēr",
                 },
                 "answerId": 4,
                 "script": "אֹ",
@@ -561,7 +572,8 @@
             {
                 "id": 11,
                 "name": {
-                    "Common": "chataf kamatz",
+                    "HebrewAcademy2006": "ẖataf kamats",
+                    "Lambdin": "ḥāṭēp̄ qā́meṣ",
                 },
                 "answerId": 4,
                 "script": "אֳ",
@@ -570,29 +582,32 @@
             {
                 "id": 12,
                 "name": {
-                    "Common": "shuruq",
+                    "HebrewAcademy2006": "shuruk",
+                    "Lambdin": "šûreq",
                 },
                 "answerId": 2,
                 "script": "אוּ",
-                "explanation": "シュルク。今までの法則に当てはまらないのがuです。なぜかוの横につきます。これのせいで「母音記号は子音の下に付きます」とか「主に下、例外的に上にも」などと言えない。「母音記号は基本的に下についてますがוにつくものだけは上にも横にも付きます！」という状況になる。本当ヘブライ語って例外だらけだよね。ちなみにホラム・マレーは単独(וֹ)では現れないのだけど、こっちは前置詞のוにつく形で単独（וּ）でも現れる。",
+                "explanation": "シュルク。あるいはシュレク。今までの法則に当てはまらないのがuです。なぜかוの横につきます。これのせいで「母音記号は子音の下に付きます」とか「主に下、例外的に上にも」などと言えない。「母音記号は基本的に下についてますがוにつくものだけは上にも横にも付きます！」という状況になる。本当ヘブライ語って例外だらけだよね。ちなみにホラム・マレーは単独(וֹ)では現れないのだけど、こっちは前置詞のוにつく形で単独（וּ）でも現れる。",
             },
             {
                 "id": 13,
                 "name": {
-                    "Common": "kubuts",
+                    "HebrewAcademy2006": "kubbuts",
+                    "Lambdin": "qibbûṣ",
                 },
                 "answerId": 2,
                 "script": "אֻ",
-                "explanation": "クブツ。あんまり見ないけどこれはu。",
+                "explanation": "クブツ。あるいはキブツ。あんまり見ないけどこれはu。",
             },
             {
                 "id": 14,
                 "name": {
-                    "Common": "sheva",
+                    "HebrewAcademy2006": "shva",
+                    "Lambdin": "šəwā",
                 },
                 "answerId": 6,
                 "script": "אְ",
-                "explanation": "シェバー。有音と無音があって、有音の時は半母音と呼ばれる弱い音、無音の時はその上の子音だけを発音する。いつ無音でいつ有音なのかは頑張って単語の中で覚えてってください。原則としては、音節の最初（特に単語の最初）は有音です。これ、便宜上アレフの下に書いたけど多分アレフにシェバーがつくことって無い？　とにかく文字の下のこの位置にきます！",
+                "explanation": "シュヴァー。あるいはシェヴァー、シェワーなど。有音と無音があって、有音の時は半母音と呼ばれる弱い音(現代ではeの発音)、無音の時はその上の子音だけを発音する。いつ無音でいつ有音なのかは頑張って単語の中で覚えてってください。原則としては、音節の最初（特に単語の最初）は有音です。これ、便宜上アレフの下に書いたけど多分アレフにシェバーがつくことって無い？　とにかく文字の下のこの位置にきます！",
             },
         ],
     },

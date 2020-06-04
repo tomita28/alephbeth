@@ -11,9 +11,5 @@ import SwiftUI
 import Combine
 
 final class UserData: ObservableObject  {
-    let letters = lettersData[0].letters
-    @Published var incorrectlyAnsweredLetters: [Letters.Letter] = []
-    @Published var unQuestionedLetters: [Letters.Letter] = []
-    @Published var nextAnswerLetter: [Letters.Letter] = []
     @Published var transliterationMode: TransliterationMode = TransliterationMode.Lambdin
 }
