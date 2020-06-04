@@ -15,7 +15,7 @@ struct ContentView: View {
     let pickers: [Pickable]
     let title: String
     
-    @ObservedObject var userData = UserData()
+    @EnvironmentObject var userData: UserData
     
     @State var selection = 0
     @State var submitted = false
@@ -29,8 +29,14 @@ struct ContentView: View {
             Text("これの読み方は？")
                 .font(.subheadline)
             Picker(selection: $selection, label: Text("")) {
-                ForEach(0..<pickers.count){ num in
-                    Text(self.pickers[num].name)
+                ForEach(pickers.filter{
+                    let contains = $0.name.keys.contains
+                    return contains(TransliterationMode.Common.rawValue) || contains(userData.transliterationMode.rawValue)
+                }, id: \.id){ picker in
+                    Text(
+                        picker.name[self.userData.transliterationMode.rawValue]
+                            ?? picker.name[TransliterationMode.Common.rawValue]!
+                    ).tag(picker.id)
                 }
             }
             .labelsHidden()
@@ -62,33 +68,6 @@ struct ContentView: View {
                         .foregroundColor(Color.gray)
                         .padding()
                 }
-                
-                /*
-                //まだ残りの問題がある時
-                if(self.userData.unQuestionedLetters.count > 0){
-                    //次へボタン有効
-                    Button(action: {
-                        //未回答のまま次の問題に行ったらこの問題を誤答リストに加える
-                        if(!self.submitted){
-                            self.addIncorrectAnswer()
-                            //未出題の問題を一つ削って次の解答へ入れる
-                            self.setNextAnswer()
-                        }
-                        self.submitted = false
-                        self.isCorrect = false
-                        self.answerLetter = self.userData.nextAnswerLetter.popLast()
-                        })
-                    {
-                        Text("次へ")
-                            .padding()
-                    }
-                //もう残りの問題はないので次へボタン無効
-                }else{
-                    Text("次へ")
-                        .foregroundColor(Color.gray)
-                        .padding()
-                }
- */
             }
             Spacer()
             if(self.unAnswered() > 0){
@@ -113,12 +92,11 @@ struct ContentView: View {
             Spacer()
             HStack{
                 NavigationLink(destination: ResultView(
-                    userData: userData,
                     withUnderScores: self.withUnderScores,
                     questionAmount: self.questionedLetters?.count,
                     letters: letters,
                     pickers: pickers,
-                    percent: self.completedRate())) {
+                    percent: self.completedRate()).environmentObject(userData)) {
                     Text("結果を見る")
                 }
                 Spacer()
@@ -163,7 +141,8 @@ struct ContentView: View {
     func answerLetterName () -> String {
         let answerId = self.answerLetter.map{$0.answerId ?? $0.id}
         let correctPicker = pickers.filter{$0.id == answerId}.first
-        return correctPicker?.name ?? "選択肢の答えがないよ"
+        let name = correctPicker?.name
+        return  name?[self.userData.transliterationMode.rawValue] ?? name![TransliterationMode.Common.rawValue]!
     }
     func answerLetterScript () -> String {
         self.answerLetter.map{$0.script} ?? "答えがないよ"
@@ -172,7 +151,13 @@ struct ContentView: View {
     func resetQuetions () {
         self.userData.incorrectlyAnsweredLetters = []
         self.userData.nextAnswerLetter = []
-        self.userData.unQuestionedLetters = questionedLetters ?? letters
+        self.userData.unQuestionedLetters = (questionedLetters ?? letters)
+            .filter{
+                let contains = $0.name.keys.contains
+                return contains(TransliterationMode.Common.rawValue)
+                || contains(userData.transliterationMode.rawValue)
+                
+        }
         self.userData.unQuestionedLetters.shuffle()
         if let pop = self.userData.unQuestionedLetters.popLast() {
             self.userData.nextAnswerLetter.append(pop)

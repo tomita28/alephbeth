@@ -20,6 +20,7 @@
 		D77262642460EE1600D0E547 /* KtavYadCLM-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D77262632460EC7E00D0E547 /* KtavYadCLM-BoldItalic.ttf */; };
 		D77262662461067700D0E547 /* Yoav Cursive.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D77262652461067700D0E547 /* Yoav Cursive.ttf */; };
 		D7A5D9182464C9C500C5F3FD /* Banner.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A5D9172464C9C500C5F3FD /* Banner.swift */; };
+		D7C8D138248757EC0098C674 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C8D137248757EC0098C674 /* SettingView.swift */; };
 		D7D6162224651F8900954E8E /* English.html in Resources */ = {isa = PBXBuildFile; fileRef = D7D6162124651F8900954E8E /* English.html */; };
 		D7D616242465214F00954E8E /* Japanese.html in Resources */ = {isa = PBXBuildFile; fileRef = D7D616232465214F00954E8E /* Japanese.html */; };
 		D7F40344245CE99D0059232C /* NonLetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F40343245CE99D0059232C /* NonLetter.swift */; };
@@ -49,6 +50,7 @@
 		D77262632460EC7E00D0E547 /* KtavYadCLM-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "KtavYadCLM-BoldItalic.ttf"; sourceTree = "<group>"; };
 		D77262652461067700D0E547 /* Yoav Cursive.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Yoav Cursive.ttf"; sourceTree = "<group>"; };
 		D7A5D9172464C9C500C5F3FD /* Banner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Banner.swift; sourceTree = "<group>"; };
+		D7C8D137248757EC0098C674 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		D7D6162124651F8900954E8E /* English.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = English.html; sourceTree = "<group>"; };
 		D7D616232465214F00954E8E /* Japanese.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = Japanese.html; sourceTree = "<group>"; };
 		D7F40343245CE99D0059232C /* NonLetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NonLetter.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 				D7FB63AB245FA17600662D4E /* LetterList.swift */,
 				D7FB63B5245FB21C00662D4E /* LetterExplanation.swift */,
 				D7FB63B3245FA5FF00662D4E /* LetterRow.swift */,
+				D7C8D137248757EC0098C674 /* SettingView.swift */,
 				D7A5D9172464C9C500C5F3FD /* Banner.swift */,
 				D7F40346245CF0B20059232C /* Models */,
 				D73BCE8D245BE8F7001B5A35 /* Assets.xcassets */,
@@ -315,6 +318,7 @@
 				D7F4034E245D20600059232C /* UserData.swift in Sources */,
 				D7FB63AC245FA17600662D4E /* LetterList.swift in Sources */,
 				D7A5D9182464C9C500C5F3FD /* Banner.swift in Sources */,
+				D7C8D138248757EC0098C674 /* SettingView.swift in Sources */,
 				D7FB63B0245FA4AB00662D4E /* ResultView.swift in Sources */,
 				D71AFB7124626D470027400E /* Letters.swift in Sources */,
 				D7FB63AA245FA03400662D4E /* MainView.swift in Sources */,

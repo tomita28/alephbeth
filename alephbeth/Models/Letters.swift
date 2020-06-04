@@ -17,12 +17,12 @@ struct Letters: Decodable{
     
     struct Picker: Pickable, Decodable {
         let id: Int
-        let name: String
+        let name: [String: String]
     }
  
     struct Letter: Pickable, Decodable{
         let id: Int
-        let name: String
+        let name: [String: String]
         let answerId: Int?
         let script: String
         let sofit: Bool?
@@ -36,5 +36,11 @@ struct Letters: Decodable{
 
 protocol Pickable {
     var id: Int {get}
-    var name: String {get}
+    var name: [String: String] {get}
+}
+
+enum TransliterationMode: String, Decodable, CaseIterable{
+    case Common = "Common"
+    case HebrewAcademy2006 = "HebrewAcademy2006"
+    case Lambdin = "Lambdin"
 }

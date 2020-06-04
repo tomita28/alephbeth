@@ -9,6 +9,8 @@
 import SwiftUI
 
 struct MainView: View {
+    @EnvironmentObject var userData: UserData
+    @State var showingSetting = false
     
     var body: some View {
         VStack{
@@ -31,7 +33,8 @@ struct MainView: View {
                             withUnderScores: false,
                             letters: lettersData[1].letters,
                             pickers: lettersData[1].pickers!,
-                            title: "母音記号クイズ"))
+                            title: "母音記号クイズ"
+                        ))
                     {
                         Text("母音記号クイズ")
                     }
@@ -51,6 +54,18 @@ struct MainView: View {
                     }
                 }
                 .navigationBarTitle(Text("ヘブライ文字暗記"))
+                .navigationBarItems(trailing:
+                    Button(action: {
+                        self.showingSetting.toggle()
+                    }) {
+                        Image(systemName: "gear").imageScale(.large)
+                    }.sheet(isPresented: $showingSetting) {
+                        SettingView(
+                            showSheetView: self.$showingSetting// userData: self.userData
+                        )
+                        .environmentObject(self.userData)
+                    }
+                )
             }
         
             Banner()
@@ -62,11 +77,12 @@ struct MainView_Previews: PreviewProvider {
     static var previews: some View {
         ForEach([
             "iPhone SE",
-            "iPhone XS Max"
+            //"iPhone XS Max"
         ], id: \.self){ deviceName in
             MainView()
-                .previewDevice(PreviewDevice(rawValue: deviceName))
-                .previewDisplayName(deviceName)
+            .environmentObject(UserData())
+            .previewDevice(PreviewDevice(rawValue: deviceName))
+            .previewDisplayName(deviceName)
         }
     }
 }

@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct LetterExplanation: View {
+    @EnvironmentObject var userData: UserData
     var withUnderScores: Bool?
     var letter: Letters.Letter
     var letters: [Letters.Letter]
@@ -31,7 +32,7 @@ struct LetterExplanation: View {
             
             HStack{
                 Text("名前:")
-                Text(letter.name).font(.system(.largeTitle))
+                Text(letter.name[userData.transliterationMode.rawValue] ?? "名前がないよ").font(.system(.largeTitle))
             }
             if(letter.dagesh ?? false){
                 HStack{
@@ -47,7 +48,12 @@ struct LetterExplanation: View {
             if((letter.answerId) != nil){
                 HStack{
                     Text("発音: ")
-                    Text(pickers.filter{$0.id == letter.answerId!}.first!.name)
+                    Text(
+                        pickers
+                            .filter{$0.id == letter.answerId!}
+                            .first
+                            .map{$0.name[TransliterationMode.Common.rawValue] ?? $0.name[userData.transliterationMode.rawValue]!}!
+                        )
                         .font(.largeTitle)
                 }.padding()
             }

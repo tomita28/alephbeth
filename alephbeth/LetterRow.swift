@@ -9,6 +9,8 @@
 import SwiftUI
 
 struct LetterRow: View {
+    @EnvironmentObject var userData: UserData
+
     var letter: Letters.Letter
     var letterPronunciation: String?
     
@@ -20,7 +22,7 @@ struct LetterRow: View {
             if(letterPronunciation != nil){
                 Text(letterPronunciation!).padding()
             }
-            Text(letter.name)
+            Text(letter.name[TransliterationMode.Common.rawValue] ?? letter.name[userData.transliterationMode.rawValue]!)
             Spacer()
         }
         .padding(.horizontal)
@@ -33,7 +35,7 @@ struct LetterRow_Previews: PreviewProvider {
             LetterRow(letter: lettersData[0].letters[0])
             LetterRow(
                 letter: lettersData[1].letters[1],
-                letterPronunciation: lettersData[1].pickers![0].name)
+                letterPronunciation: lettersData[1].pickers![0].name[TransliterationMode.Common.rawValue])
         }
         .previewLayout(.fixed(width: 300, height: 70))
     }

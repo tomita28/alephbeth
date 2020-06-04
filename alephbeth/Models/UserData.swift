@@ -15,4 +15,5 @@ final class UserData: ObservableObject  {
     @Published var incorrectlyAnsweredLetters: [Letters.Letter] = []
     @Published var unQuestionedLetters: [Letters.Letter] = []
     @Published var nextAnswerLetter: [Letters.Letter] = []
+    @Published var transliterationMode: TransliterationMode = TransliterationMode.Lambdin
 }

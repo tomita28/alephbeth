@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct LetterList: View {
+    @EnvironmentObject var userData: UserData
     var withUnderScores: Bool?
     //フルの文字群
     var letters: [Letters.Letter]
@@ -18,7 +19,15 @@ struct LetterList: View {
     var title: String
     
     var body: some View {
-        List(listedUpLetters ?? letters, id: \.id){letter in
+        List(
+            (listedUpLetters ?? letters)
+            .filter{
+                let keys = $0.name.keys
+                return keys.contains(TransliterationMode.Common.rawValue)
+                    || keys.contains(userData.transliterationMode.rawValue)
+            },
+            id: \.id)
+        {letter in
             NavigationLink(destination: LetterExplanation(
                 withUnderScores: self.withUnderScores,
                 letter: letter,
@@ -37,7 +46,7 @@ struct LetterList: View {
             pickers?.filter{picker in
                 picker.id == answerId
                 }.first
-        }.map{$0.name}
+        }.flatMap{$0.name[userData.transliterationMode.rawValue]}
     }
 }
 

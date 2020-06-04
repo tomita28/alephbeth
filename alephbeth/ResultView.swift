@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct ResultView: View {
-    @ObservedObject var userData: UserData
+    @EnvironmentObject var userData: UserData
     var withUnderScores: Bool?
     var questionAmount: Int?
     let letters: [Letters.Letter]
@@ -34,7 +34,7 @@ struct ResultView: View {
                 questionedLetters: userData.incorrectlyAnsweredLetters,
                 pickers: pickers ?? letters,
                 title: "間違えた文字だけをテスト"
-            )){
+            ).environmentObject(userData)){
                 Text("間違えた文字だけをテストする").fontWeight(.heavy).foregroundColor(Color.blue).padding()
             }
 
@@ -62,6 +62,6 @@ struct ResultView_Previews: PreviewProvider {
             //letterData[2]
         //]
         userData.unQuestionedLetters = []
-        return ResultView(userData: userData, letters: lettersData[0].letters, percent: 0)
+        return ResultView(letters: lettersData[0].letters, percent: 0).environmentObject(userData)
     }
 }
