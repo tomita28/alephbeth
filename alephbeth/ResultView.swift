@@ -30,13 +30,17 @@ struct ResultView: View {
             //Text("unqueestioned: " + String(self.userData.unQuestionedNums.count))
             //Text("next:" + String(self.userData.nextAnswerNum.count))
             Text("誤答数: " + String(quizData.incorrectlyAnsweredLetters.count))
-            NavigationLink(destination: ContentView(
-                letters: letters,
-                questionedLetters: quizData.incorrectlyAnsweredLetters,
-                pickers: pickers ?? letters,
-                title: "間違えた文字だけをテスト"
-            ).environmentObject(userData)){
-                Text("間違えた文字だけをテストする").fontWeight(.heavy).foregroundColor(Color.blue).padding()
+            if (quizData.incorrectlyAnsweredLetters.count > 0) {
+                NavigationLink(destination: ContentView(
+                    letters: letters,
+                    questionedLetters: quizData.incorrectlyAnsweredLetters,
+                    pickers: pickers ?? letters,
+                    title: "間違えた文字だけをテスト"
+                ).environmentObject(userData)){
+                    Text("間違えた文字だけをテストする").fontWeight(.heavy).foregroundColor(Color.blue).padding()
+                }
+            } else {
+                Text("間違えた文字だけをテストする").fontWeight(.heavy).foregroundColor(Color.gray).padding()
             }
 
             Spacer()

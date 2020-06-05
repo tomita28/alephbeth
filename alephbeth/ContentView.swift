@@ -22,6 +22,9 @@ struct ContentView: View {
     @State var submitted = false
     @State var isCorrect = false
     @State var answerLetter: Letters.Letter? = nil
+    @State private var showingUnansweredAlert = false
+    @State private var showingUnfinishedAlert = false
+    @State private var goResultView = false
     
     var body: some View {
         VStack {
@@ -92,16 +95,29 @@ struct ContentView: View {
             
             Spacer()
             HStack{
-                NavigationLink(destination: ResultView(
-                    quizData: quizData,
-                    withUnderScores: self.withUnderScores,
-                    questionAmount: self.questionedLetters?.count,
-                    letters: letters,
-                    pickers: pickers,
-                    percent: self.completedRate())
-                    .environmentObject(userData)
-                ) {
-                    Text("結果を見る")
+                NavigationLink(
+                    destination: ResultView(
+                        quizData: quizData,
+                        withUnderScores: self.withUnderScores,
+                        questionAmount: self.questionedLetters?.count,
+                        letters: letters,
+                        pickers: pickers,
+                        percent: self.completedRate()
+                    )
+                    .environmentObject(userData),
+                    isActive: $goResultView) {
+                    Text("")
+                }
+                Button("結果を見る"){
+                    if(self.quizData.unQuestionedLetters.count > 0){
+                        self.showingUnfinishedAlert = true
+                    } else {
+                        self.goResultView = true
+                    }
+                }.alert(isPresented: $showingUnfinishedAlert) {
+                    Alert(title: Text("未終了"), message: Text("まだ全ての問題に回答していません。このクイズを終了して結果を見ますか？"), primaryButton: .destructive(Text("結果を見る")) {
+                        self.goResultView = true
+                    }, secondaryButton: .cancel())
                 }
                 Spacer()
                 Button(action: {self.resetQuetions()})
@@ -114,19 +130,27 @@ struct ContentView: View {
                     || self.unAnswered() > 0 && self.submitted){
                     //次へボタン有効
                     Button(action: {
-                        //未回答のまま次の問題に行ったらこの問題を誤答リストに加える
-                        if(!self.submitted){
-                            self.addIncorrectAnswer()
-                            //未出題の問題を一つ削って次の解答へ入れる
-                            self.setNextAnswer()
+                        //未回答のまま次の問題に行ったらアラートを表示
+                        if(!self.submitted) {
+                            self.showingUnansweredAlert = true
+                        } else {
+                            self.submitted = false
+                            self.isCorrect = false
+                            self.answerLetter = self.quizData.nextAnswerLetter.popLast()
                         }
-                        self.submitted = false
-                        self.isCorrect = false
-                        self.answerLetter = self.quizData.nextAnswerLetter.popLast()
-                        })
+                    })
                     {
                         Text("次へ")
                             .padding()
+                    }.alert(isPresented: $showingUnansweredAlert) {
+                        Alert(title: Text("未回答"), message: Text("未回答です。この問題を不正解として次の問題に行きますか？"), primaryButton: .destructive(Text("次へ")) {
+                                self.addIncorrectAnswer()
+                                //未出題の問題を一つ削って次の解答へ入れる
+                                self.setNextAnswer()
+                                self.submitted = false
+                                self.isCorrect = false
+                                self.answerLetter = self.quizData.nextAnswerLetter.popLast()
+                        }, secondaryButton: .cancel())
                     }
                 //もう残りの問題はないので次へボタン無効
                 }else{
