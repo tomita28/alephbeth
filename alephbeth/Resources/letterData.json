@@ -186,7 +186,7 @@
             {
                 "id": 15,
                 "name": {
-                    "HebrewAcademy2006": "chaf sofit",
+                    "HebrewAcademy2006": "khaf sofit",
                     "Lambdin": "ḵap̄ sôp̄îṯ",
                 },
                 "script": "ך",
@@ -304,7 +304,7 @@
             {
                 "id": 25,
                 "name": {
-                    "HebrewAcademy2006": "fei sofit",
+                    "HebrewAcademy2006": "fe sofit",
                     "Lambdin": "p̄ēh sôp̄îṯ",
                 },
                 "script": "ף",
@@ -347,7 +347,7 @@
                 "sofit": false,
                 "dagesh": false,
                 "original": 28,
-                "explanation": "クフ。コフとも言う。コフは猿の意味。だんだん猿の頭に見えてきた。アルファベットではqで転写するけど発音は多分kで大丈夫。qっていうよりはpだよね。それからカタカナの「ア」に見える。書き順もアでok。下に突き刺さっている。",
+                "explanation": "クフ。コフとも言う。コフは猿の意味。だんだん猿の頭に見えてきた。アルファベットではqで転写することもあるけど発音は多分kで大丈夫。qっていうよりはpだよね。それからカタカナの「ア」に見える。書き順もアでok。下に突き刺さっている。",
             },
             {
                 "id": 29,
@@ -359,7 +359,7 @@
                 "sofit": false,
                 "dagesh": false,
                 "original": 29,
-                "explanation": "レーシュ。ローシュというと頭の意味。Rの音担当で、巻き舌でもあり。rと逆向きだ。まあそんなもんだよね。",
+                "explanation": "レーシュ。ローシュというと頭の意味。Rの音担当で、巻き舌でもあり。とはいえrと逆向きだ。まあ対応なんてそんなもんだよね。",
             },
             {
                 "id": 30,
